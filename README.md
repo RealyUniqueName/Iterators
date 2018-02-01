@@ -31,6 +31,6 @@ for(c in str.chars()) {
 }
 ```
 
-See [Iterators.hx](https://github.com/RealyUniqueName/Iterators/blob/master/src/haxe/Iterators.hx) for all available extensions.
+See [Iterators.hx](https://github.com/RealyUniqueName/Iterators/blob/master/src/Iterators.hx) for all available extensions.
 
 
