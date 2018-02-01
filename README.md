@@ -1,4 +1,4 @@
-# Iterators
+# Iterators [![Build Status](https://travis-ci.org/RealyUniqueName/Iterators.svg?branch=master)](https://travis-ci.org/RealyUniqueName/Iterators)
 
 This is a set of frequently used iterators for Haxe collections and other types.
 
