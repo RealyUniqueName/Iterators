@@ -15,6 +15,8 @@ class TestMap extends BaseCase {
 			keys.push(p.key);
 			values.push(p.value);
 		}
+		keys.sort(Reflect.compare);
+		values.sort(Reflect.compare);
 
 		Assert.same([1, 2], keys);
 		Assert.same(['hello', 'world'], values);
@@ -29,6 +31,8 @@ class TestMap extends BaseCase {
 			keys.push(p.key);
 			values.push(p.value);
 		}
+		keys.sort(Reflect.compare);
+		values.sort(Reflect.compare);
 
 		Assert.same([1, 2], keys);
 		Assert.same(['hello', 'world'], values);
