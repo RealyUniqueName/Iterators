@@ -1,0 +1,28 @@
+sudo: required
+dist: trusty
+
+language: haxe
+
+os:
+  - linux
+  - osx
+
+haxe:
+  - "3.4.5"
+  - development
+
+install:
+  - haxelib install travix
+  - haxelib run travix install
+
+script:
+  - haxelib run travix interp
+  - haxelib run travix neko
+  - haxelib run travix python
+  - haxelib run travix node
+  - haxelib run travix java
+  - then haxelib run travix cpp
+  - haxelib run travix cs
+  - then haxelib run travix php
+  #Invalid lua setup on OSX. See https://github.com/back2dos/travix/issues/78
+  - if [ `uname` = "Linux" ] then haxelib run travix lua; fi;

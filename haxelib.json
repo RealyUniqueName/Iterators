@@ -1,0 +1,14 @@
+{
+	"name"         : "Iterators",
+	"url"          : "https://github.com/RealyUniqueName/Iterators",
+	"license"      : "MIT",
+	"tags"         : ["iterator", "iterators"],
+	"description"  : "A collection of useful iterators.",
+	"version"      : "1.0.0",
+	"releasenote"  : "Initial release.",
+	"classPath"    : "src",
+	"contributors" : ["RealyUniqueName"],
+	"dependencies" : {
+		"exception": ""
+	}
+}
