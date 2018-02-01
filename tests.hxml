@@ -4,3 +4,4 @@
 -lib exception
 -D analyzer-optimize
 -main Test
+-dce full

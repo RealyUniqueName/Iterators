@@ -9,9 +9,11 @@ class KeyValueIterator<K,V> {
 		this.keys = map.keys();
 	}
 
-	public inline function hasNext() return keys.hasNext();
+	public inline function hasNext():Bool {
+		return keys.hasNext();
+	}
 
-	public inline function next() {
+	public inline function next():KeyValuePair<K,V> {
 		var key = keys.next();
 		return new KeyValuePair<K,V>(key, map.get(key));
 	}
