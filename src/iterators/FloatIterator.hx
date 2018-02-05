@@ -2,12 +2,12 @@ package iterators;
 
 import iterators.exceptions.IllegalValueException;
 
-class IntIterator {
+class FloatIterator {
 	var to:Float;
-	var current:Int;
-	var _step:Int = 0;
+	var current:Float;
+	var _step:Float = 0;
 
-	public inline function new(from:Int, to:Float) {
+	public inline function new(from:Float, to:Float) {
 		this.to = to;
 		current = from;
 		if(from != to) {
@@ -15,9 +15,9 @@ class IntIterator {
 		}
 	}
 
-	public inline function step(value:Int):IntIterator {
+	public inline function step(value:Float):FloatIterator {
 		if(hasNext() && (value == 0 || (_step < 0 && value > 0) || (_step > 0 && value < 0))) {
-			throw new IllegalValueException('Infinite Int iterator. Cannot iterate from $current to $to with step $value.');
+			throw new IllegalValueException('Infinite Float iterator. Cannot iterate from $current to $to with step $value.');
 		}
 		_step = value;
 		return this;
@@ -27,7 +27,7 @@ class IntIterator {
 		return (_step < 0 ? current > to : current < to);
 	}
 
-	public inline function next():Int {
+	public inline function next():Float {
 		var value = current;
 		current += _step;
 		return value;

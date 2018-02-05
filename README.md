@@ -15,7 +15,7 @@ haxelib install iterators
 ```haxe
 using Iterators;
 
-for(i in 10.to(0).step(-2)) {
+for(i in 10.to(0).step(-2)) { //.step() is optional
 	trace(i);
 }
 

@@ -2,14 +2,12 @@ import iterators.*;
 
 class MapIterators {
 	/**
-	 *  Map iterator which allows you to get key & value in one go without the need to check `map.get()` for `null` value.
+	 *  Map iterator which allows you to get key & value in one go.
 	 *  ```
 	 *  var m = [1 => 'hello'];
 	 *  for(p in map.pairs()) {
-	 *  	$type(p.value); // String
-	 *  	$type(map.get(p.key)); // Null<String>
 	 *  	trace(p.key); // 1
-	 *  	trace(p.value); //
+	 *  	trace(p.value); // hello
 	 *  }
 	 *  ```
 	 */
@@ -111,6 +109,25 @@ class IntIterators {
 	 *  ```
 	 */
 	static inline public function to(from:Int, to:Int) return new IntIterator(from, to);
+}
+
+class FloatIterators {
+	/**
+	 *  Float iterator from `from` (including) to `to` (excluding).
+	 *  ```
+	 *  var value = 10.5;
+	 *  for(i in value.floatTo(13)) {
+	 *  	trace(c); // Sequentially prints: 10.5, 11.5, 12.5
+	 *  }
+	 *  for(i in value.floatTo(7)) {
+	 *  	trace(c); // Sequentially prints: 10.5, 9.5, 8.5
+	 *  }
+	 *  for(i in value.floatTo(12).step(0.5)) {
+	 *  	trace(c); // Sequentially prints: 10.5, 11, 11.5
+	 *  }
+	 *  ```
+	 */
+	static inline public function floatTo(from:Float, to:Float) return new FloatIterator(from, to);
 }
 
 class AnonymousObjectIterators {
