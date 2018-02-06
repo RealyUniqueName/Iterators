@@ -4,8 +4,8 @@
 	"license"      : "MIT",
 	"tags"         : ["iterator", "iterators"],
 	"description"  : "A collection of useful iterators.",
-	"version"      : "1.1.0",
-	"releasenote"  : "Float iterator.",
+	"version"      : "1.2.0",
+	"releasenote"  : "Key-value iterator for haxe.DynamicAccess; .reverseIndices() for String.",
 	"classPath"    : "src",
 	"contributors" : ["RealyUniqueName"],
 	"dependencies" : {
