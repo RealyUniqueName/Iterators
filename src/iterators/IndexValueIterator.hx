@@ -1,5 +1,7 @@
 package iterators;
 
+import iterators.items.IndexValuePair;
+
 class IndexValueIterator<V> {
 	var array:Array<V>;
 	var current:Int = -1;
@@ -15,15 +17,5 @@ class IndexValueIterator<V> {
 	public inline function next():IndexValuePair<V> {
 		++current;
 		return new IndexValuePair<V>(current, array[current]);
-	}
-}
-
-class IndexValuePair<V> {
-	public var index (default,null):Int;
-	public var value (default,null):V;
-
-	public inline function new(index:Int, value:V) {
-		this.index = index;
-		this.value = value;
 	}
 }

@@ -1,5 +1,7 @@
 package iterators;
 
+import iterators.items.IndexCharPair;
+
 class IndexCharIterator {
 	var str:String;
 	var current:Int = -1;
@@ -15,15 +17,5 @@ class IndexCharIterator {
 	public inline function next():IndexCharPair {
 		++current;
 		return new IndexCharPair(current, str.charAt(current));
-	}
-}
-
-class IndexCharPair {
-	public var index (default,null):Int;
-	public var char (default,null):String;
-
-	public inline function new(index:Int, char:String) {
-		this.index = index;
-		this.char = char;
 	}
 }

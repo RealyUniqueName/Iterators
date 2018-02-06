@@ -1,6 +1,6 @@
 package iterators;
 
-import iterators.IndexValueIterator;
+import iterators.items.IndexValuePair;
 
 class IndexValueReversiveIterator<V> {
 	var array:Array<V>;

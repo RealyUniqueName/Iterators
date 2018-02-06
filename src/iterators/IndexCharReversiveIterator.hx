@@ -1,6 +1,6 @@
 package iterators;
 
-import iterators.IndexCharIterator;
+import iterators.items.IndexCharPair;
 
 class IndexCharReversiveIterator {
 	var str:String;
