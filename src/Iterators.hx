@@ -1,4 +1,5 @@
 import iterators.*;
+import haxe.DynamicAccess;
 
 class MapIterators {
 	/**
@@ -12,6 +13,20 @@ class MapIterators {
 	 *  ```
 	 */
 	static public inline function pairs<K,V>(map:Map<K,V>) return new KeyValueIterator(map);
+}
+
+class DynamicAccessIterators {
+	/**
+	 *  Iterator for `haxe.DynamicAccess` which allows you to get key & value in one go.
+	 *  ```
+	 *  var obj:DynamicAccess<String> = {hello:'world'};
+	 *  for(p in obj.pairs()) {
+	 *  	trace(p.key); // hello
+	 *  	trace(p.value); // world
+	 *  }
+	 *  ```
+	 */
+	static public inline function pairs<V>(obj:DynamicAccess<V>) return new KeyValueDynamicAccessIterator(obj);
 }
 
 class ArrayIterators {
