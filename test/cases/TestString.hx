@@ -33,6 +33,17 @@ class TestString extends BaseCase {
 		Assert.same(['i', 'h'], chars);
 	}
 
+	public function testReverseIndices() {
+		var str = 'hello';
+
+		var indices = [];
+		for(index in str.reverseIndices()) {
+			indices.push(index);
+		}
+
+		Assert.same([4, 3, 2, 1, 0], indices);
+	}
+
 	public function testChars() {
 		var str = 'hi';
 

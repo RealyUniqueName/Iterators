@@ -72,6 +72,10 @@ class StringIterators {
 	 */
 	static public inline function reversePairs(str:String) return new IndexCharReversiveIterator(str);
 	/**
+	 *  String iterator which iterates over indices from the end to the beginning of a string.
+	 */
+	static public inline function reverseIndices<V>(str:String) return new IndexReversiveIterator(str.length);
+	/**
 	 *  String iterator over characters.
 	 *  ```
 	 *  var str = 'hello';
