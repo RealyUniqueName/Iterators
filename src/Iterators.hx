@@ -49,10 +49,6 @@ class ArrayIterators {
 	 *  Array iterator which iterates from the end to the beginning of an array.
 	 */
 	static public inline function reverseValues<V>(array:Array<V>) return new ValueReversiveIterator(array);
-	/**
-	 *  Array iterator which iterates over indices from the end to the beginning of an array.
-	 */
-	static public inline function reverseIndices<V>(array:Array<V>) return new IndexReversiveIterator(array.length);
 }
 
 class StringIterators {
@@ -71,10 +67,6 @@ class StringIterators {
 	 *  String iterator which iterates from the end to the beginning of a string and allows you to get index & character in one go.
 	 */
 	static public inline function reversePairs(str:String) return new IndexCharReversiveIterator(str);
-	/**
-	 *  String iterator which iterates over indices from the end to the beginning of a string.
-	 */
-	static public inline function reverseIndices<V>(str:String) return new IndexReversiveIterator(str.length);
 	/**
 	 *  String iterator over characters.
 	 *  ```
@@ -104,11 +96,19 @@ class StringIterators {
 	 *  ```
 	 *  var str = 'hi';
 	 *  for(c in str.charCodes()) {
-	 *  	trace(c); // Sequentially prints: 104, 105
+	 *  	trace(c); // Sequentially prints: 105, 104
 	 *  }
 	 *  ```
 	 */
 	static public inline function reverseCharCodes(str:String) return new CharCodeReversiveIterator(str);
+}
+
+class LengthIterators {
+	/**
+	 *  Iterator for values with `length` field which iterates over indices from the end to the beginning of a `value`.
+	 */
+	@:generic
+	static public inline function reverseIndices<T:{var length(default,never):Int;}>(value:T) return new IndexReversiveIterator(value.length);
 }
 
 class IntIterators {
@@ -117,17 +117,17 @@ class IntIterators {
 	 *  ```
 	 *  var value = 10;
 	 *  for(i in value.to(13)) {
-	 *  	trace(c); // Sequentially prints: 10, 11, 12
+	 *  	trace(i); // Sequentially prints: 10, 11, 12
 	 *  }
 	 *  for(i in value.to(7)) {
-	 *  	trace(c); // Sequentially prints: 10, 9, 8
+	 *  	trace(i); // Sequentially prints: 10, 9, 8
 	 *  }
 	 *  for(i in value.to(15).step(2)) {
-	 *  	trace(c); // Sequentially prints: 10, 12, 14
+	 *  	trace(i); // Sequentially prints: 10, 12, 14
 	 *  }
 	 *  ```
 	 */
-	static inline public function to(from:Int, to:Int) return new IntIterator(from, to);
+	static inline public function to(from:Int, to:Float) return new IntIterator(from, to);
 }
 
 class FloatIterators {
@@ -136,13 +136,13 @@ class FloatIterators {
 	 *  ```
 	 *  var value = 10.5;
 	 *  for(i in value.floatTo(13)) {
-	 *  	trace(c); // Sequentially prints: 10.5, 11.5, 12.5
+	 *  	trace(i); // Sequentially prints: 10.5, 11.5, 12.5
 	 *  }
 	 *  for(i in value.floatTo(7)) {
-	 *  	trace(c); // Sequentially prints: 10.5, 9.5, 8.5
+	 *  	trace(i); // Sequentially prints: 10.5, 9.5, 8.5
 	 *  }
 	 *  for(i in value.floatTo(12).step(0.5)) {
-	 *  	trace(c); // Sequentially prints: 10.5, 11, 11.5
+	 *  	trace(i); // Sequentially prints: 10.5, 11, 11.5
 	 *  }
 	 *  ```
 	 */
