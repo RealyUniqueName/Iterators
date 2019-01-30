@@ -12,7 +12,7 @@ class MapIterators {
 	 *  }
 	 *  ```
 	 */
-	static public inline function pairs<K,V>(map:Map<K,V>) return new KeyValueIterator(map);
+	static public inline function pairs<K,V>(map:Map<K,V>) return new MapPairIterator(map);
 }
 
 class DynamicAccessIterators {
@@ -164,5 +164,5 @@ class AnonymousObjectIterators {
 	 *  }
 	 *  ```
 	 */
-	static public inline function fields(object:Any) return new FieldValueIterator(object);
+	static public inline function fields(object:Dynamic) return new FieldValueIterator(object);
 }

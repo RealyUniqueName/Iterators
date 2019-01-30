@@ -2,7 +2,7 @@ package iterators;
 
 import iterators.items.KeyValuePair;
 
-class KeyValueIterator<K,V> {
+class MapPairIterator<K,V> {
 	var map:Map<K,V>;
 	var keys:Iterator<K>;
 
